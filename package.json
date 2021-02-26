@@ -1,7 +1,7 @@
 {
   "name": "vue-condition-filter",
   "description": "condition filter base vue",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": "pengshiyu <1940607002@qq.com>",
   "license": "MIT",
   "private": false,

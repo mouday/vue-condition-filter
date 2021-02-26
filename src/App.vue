@@ -10,14 +10,16 @@
 
 <script>
 import Configs from './config.js';
-import { ConditionGroup, ConditionUtil } from './condition/index.js';
+import condition from './condition/index.js';
 
 export default {
   name: '',
 
   props: [],
 
-  components: { ConditionGroup },
+  components: {
+    ConditionGroup: condition.ConditionGroup,
+  },
 
   data() {
     return {
@@ -49,7 +51,7 @@ export default {
     async getData() {},
 
     getConditions() {
-      return ConditionUtil.getConditions(this.configs);
+      return condition.ConditionUtil.getConditions(this.configs);
     },
 
     handleChange(item, configs) {
@@ -59,7 +61,9 @@ export default {
   },
 
   created() {
-    this.configs = ConditionUtil.getConfigs(Configs, this.settings);
+    console.log(condition);
+
+    this.configs = condition.ConditionUtil.getConfigs(Configs, this.settings);
     console.log(this.getConditions());
   },
 };
